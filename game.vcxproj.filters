@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="character.cpp" />
+    <ClCompile Include="gameConfig.cpp" />
+    <ClCompile Include="host\FolderWatcher-win.cpp">
+      <Filter>host</Filter>
+    </ClCompile>
+    <ClCompile Include="host\GlutHost.cpp">
+      <Filter>host</Filter>
+    </ClCompile>
+    <ClCompile Include="host\GlutHostMain.cpp">
+      <Filter>host</Filter>
+    </ClCompile>
+    <ClCompile Include="host\ParticlePresets.cpp">
+      <Filter>host</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="navmesh.cpp" />
+    <ClCompile Include="params.cpp" />
+    <ClCompile Include="statemachine\state.cpp">
+      <Filter>statemachine</Filter>
+    </ClCompile>
+    <ClCompile Include="statemachine\action.cpp">
+      <Filter>statemachine</Filter>
+    </ClCompile>
+    <ClCompile Include="statemachine\statemachine.cpp">
+      <Filter>statemachine</Filter>
+    </ClCompile>
+    <ClCompile Include="statemachine\transition.cpp">
+      <Filter>statemachine</Filter>
+    </ClCompile>
+    <ClCompile Include="statemachine\condition.cpp">
+      <Filter>statemachine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="character.h" />
+    <ClInclude Include="gameConfig.h" />
+    <ClInclude Include="host\FolderWatcher-win.h">
+      <Filter>host</Filter>
+    </ClInclude>
+    <ClInclude Include="host\GlutHost.h">
+      <Filter>host</Filter>
+    </ClInclude>
+    <ClInclude Include="host\ParticlePresets.h">
+      <Filter>host</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="navmesh.h" />
+    <ClInclude Include="params.h" />
+    <ClInclude Include="statemachine\state.h">
+      <Filter>statemachine</Filter>
+    </ClInclude>
+    <ClInclude Include="statemachine\action.h">
+      <Filter>statemachine</Filter>
+    </ClInclude>
+    <ClInclude Include="statemachine\transition.h">
+      <Filter>statemachine</Filter>
+    </ClInclude>
+    <ClInclude Include="statemachine\condition.h">
+      <Filter>statemachine</Filter>
+    </ClInclude>
+    <ClInclude Include="statemachine\statemachine.h">
+      <Filter>statemachine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="host">
+      <UniqueIdentifier>{87717a51-4516-4c06-a1de-c6b89a5c16e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sample">
+      <UniqueIdentifier>{dafee91e-18b1-4dd7-a488-726565484f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="statemachine">
+      <UniqueIdentifier>{6f6fd2a0-000b-4a3f-a04f-edfabf9eccd0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sample\test.lua">
+      <Filter>sample</Filter>
+    </None>
+    <None Include="sample\navmesh.xml">
+      <Filter>sample</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="sample\params.xml">
+      <Filter>sample</Filter>
+    </Xml>
+    <Xml Include="sample\grid.xml">
+      <Filter>sample</Filter>
+    </Xml>
+    <Xml Include="sample\weights.xml">
+      <Filter>sample</Filter>
+    </Xml>
+    <Xml Include="sample\statemachine.xml">
+      <Filter>sample</Filter>
+    </Xml>
+    <Xml Include="sample\enemystatemachine.xml">
+      <Filter>sample</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

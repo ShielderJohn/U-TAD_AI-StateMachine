@@ -1,0 +1,43 @@
+<state-machine>
+  <!-- States -->
+  <states initial-state="idle" wait-time="0">
+    <state id="idle">
+      <enter-action type="set-image" image="mage_idle.png"></enter-action>
+      <!--<exit-action type="" image=""></exit-action>-->
+      <!--<state-action type=""></state-action>-->
+
+      <transitions>
+        <transition id="idle-to-pain" target-state="pain">
+          <condition type="receive-damage"></condition>
+        </transition>
+      </transitions>
+    </state>
+
+    <state id="pain" wait-time="0.5">
+      <enter-action type="set-image" image="mage_pain.png"></enter-action>
+      <!--<exit-action type="" image=""></exit-action>-->
+      <!--<state-action type=""></state-action>-->
+
+      <transitions>
+        <transition id="pain-to-die" target-state="die">
+          <condition type="check-health" value="0"></condition>
+        </transition>
+        
+        <transition id="pain-to-idle" target-state="idle"></transition>
+      </transitions>
+    </state>
+
+    <state id="die" wait-time="0.5">
+      <enter-action type="set-image" image="mage_die.png"></enter-action>
+      <!--<exit-action type=""></exit-action>-->
+      <!--<state-action type=""></state-action>-->
+
+      <transitions>
+        <transition id="dead-to-idle" target-state="idle">
+          <trigger-action type="die"></trigger-action>
+        </transition>
+      </transitions>
+    </state>
+    
+  </states>
+</state-machine>

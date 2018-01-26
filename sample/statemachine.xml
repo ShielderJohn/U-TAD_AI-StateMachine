@@ -1,0 +1,74 @@
+<state-machine>
+  <!-- States -->
+  <states initial-state="idle" wait-time="0">
+    <state id="idle">
+      <enter-action type="set-image" image="dragon_idle.png"></enter-action>
+      <!--<exit-action type="" image=""></exit-action>-->
+      <!--<state-action type=""></state-action>-->
+
+      <transitions>
+        <transition id="idle-to-surprise" target-state="alert">
+          <condition type="check-for-target"></condition>
+        </transition>
+      </transitions>
+    </state>
+
+    <state id="alert" wait-time="1">
+      <enter-action type="set-image" image="dragon_alert.png"></enter-action>
+      <!--<exit-action type="" image=""></exit-action>-->
+      <!--<state-action type=""></state-action>-->
+
+      <transitions>
+        <transition id="alert-to-moving" target-state="moving"></transition>
+      </transitions>
+    </state>
+    
+    <state id="moving" wait-time="0">
+      <enter-action type="set-image" image="dragon_moving.png"></enter-action>
+      <!--<exit-action type="set-image" image="idle"></exit-action>-->
+      <state-action type="move-to-target" speed="80"></state-action>
+
+      <transitions>
+        <transition id="moving-to-prepare-attack" target-state="prepare-attack">
+          <condition type="check-distance" threshold="100"></condition>
+        </transition>
+      </transitions>
+    </state>
+
+    <state id="prepare-attack" wait-time="0.85">
+      <enter-action type="set-image" image="dragon_prepare_attack.png"></enter-action>
+      <!--<exit-action type="set-image" image="idle"></exit-action>-->
+      <!--<state-action type=""></state-action>-->
+
+      <transitions>
+        <transition id="prepare-attack-to-attack" target-state="attack"></transition>
+      </transitions>
+    </state>
+
+    <state id="attack" wait-time="0.5">
+      <enter-action type="set-image" image="dragon_attack.png"></enter-action>
+      <!--<exit-action type=""></exit-action>-->
+      <state-action type="attack" damage="50"></state-action>
+
+      <transitions>
+        <transition id="attack-to-idle" target-state="idle">
+          <condition type="inverse">
+            <subcondition type="check-for-target"></subcondition>
+          </condition>
+        </transition>
+
+        <transition id="attack-to-prepare-attack" target-state="prepare-attack">
+          <condition type="and">
+            <subcondition type="check-for-target"></subcondition>
+            <subcondition type="check-distance" threshold="100"></subcondition>
+          </condition>
+        </transition>
+      
+        <transition id="attack-to-alert" target-state="alert">
+          <condition type="check-for-target"></condition>
+        </transition>
+      </transitions>
+    </state>
+    
+  </states>
+</state-machine>
